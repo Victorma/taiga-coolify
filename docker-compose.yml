@@ -35,8 +35,8 @@ services:
       - EMAIL_BACKEND=${EMAIL_BACKEND:-console}
       - TZ=${TIMEZONE:-Asia/Ho_Chi_Minh}
     volumes:
-      - taiga-static:/taiga-backend/static
-      - taiga-media:/taiga-backendd/media
+      - taiga-static:/taiga-back/static
+      - taiga-media:/taiga-back/media
     depends_on:
       taiga-db:
         condition: service_healthy
@@ -73,8 +73,8 @@ services:
       - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE:-secret-erlang-cookie}
       - TZ=${TIMEZONE:-Asia/Ho_Chi_Minh}
     volumes:
-      - taiga-static:/taiga-backend/static
-      - taiga-media:/taiga-backend/media
+      - taiga-static:/taiga-back/static
+      - taiga-media:/taiga-back/media
     depends_on:
       - taiga-async-rabbitmq
       - taiga-db
@@ -99,8 +99,8 @@ services:
       - TAIGA_WEBSOCKETS_URL=${WEBSOCKETS_SCHEME:-wss}://${TAIGA_DOMAIN:?}
       - TZ=${TIMEZONE:-Asia/Ho_Chi_Minh}
     volumes:
-      - taiga-static:/taiga-frontend/dist/static
-      - taiga-media:/taiga-frontend/dist/media
+      - taiga-static:/taiga-front/dist/static
+      - taiga-media:/taiga-front/dist/media
     restart: unless-stopped
     ports:
       - "80"
