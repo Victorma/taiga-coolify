@@ -115,7 +115,7 @@ services:
       - "traefik.http.services.taiga-front.loadbalancer.server.port=80"
 
   taiga-events:
-    image: elestio/taiga-events:latest
+    image: elestio/taiga-event:latest
     environment:
       - SECRET_KEY=${SECRET_KEY:?}
       - TAIGA_SECRET_KEY=${SECRET_KEY:?}
