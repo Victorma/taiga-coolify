@@ -106,7 +106,6 @@ services:
       - "80"
     labels:
       - "traefik.enable=true"
-      - "coolify.fqdn=pj.f3d.me"
       - "traefik.http.routers.taiga-front.rule=Host(`${TAIGA_DOMAIN:?}`) && !PathPrefix(`/events`) && !PathPrefix(`/api/`) && !PathPrefix(`/admin/`)"
       - "traefik.http.routers.taiga-front.entrypoints=https"
       - "traefik.http.routers.taiga-front.tls=true"
